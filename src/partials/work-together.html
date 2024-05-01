@@ -65,41 +65,16 @@
     </address>
   </div>
 
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Your message has been successfully sent!</p>
-    </div>
-  </div>
+
 </footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var form = document.getElementById("form-footer");
-    var modal = document.getElementById("myModal");
-    var span = document.querySelector(".modal-content .close");
-
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
-
-      var email = document.getElementById("email").value;
-      var comment = document.getElementById("comment").value;
-
-      // Perform your validation here if needed
-
-      // Simulating POST request to the server
-      // Replace this with your actual AJAX request
-      // Here I'm just simulating a successful response after 1 second
-      setTimeout(function() {
-        modal.style.display = "block"; // Show modal
-        form.reset(); // Reset form
-      }, 1000);
-    });
-
-    span.addEventListener("click", function() {
-      modal.style.display = "none"; // Close modal
-    });
-  });
-</script>
+<div id="overlay"></div>
+<div id="modal" class="modal">
+  <svg class="close" width="22" height="22">
+    <use href="./img/icons.svg#icon-x-1"></use>
+  </svg>
+  <div class="modal-content">
+    <h2 id="modal-title" class="modal-title"></h2>
+    <p id="modal-text" class="modal-text"></p>
+  </div>
+</div>
 
